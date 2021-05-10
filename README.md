@@ -234,7 +234,16 @@ You should see following output:
 
 ```
 NAME                                  READY   STATUS    RESTARTS   AGE
-
+calico-kube-controllers-6d7b4db76c-vbmmj   1/1     Running   0          22m     172.16.206.1     k3s-cp1   <none>           <none>
+calico-node-459h8                          1/1     Running   0          6m24s   192.168.100.12   k3s-wn3   <none>           <none>
+calico-node-gkbk7                          1/1     Running   0          18m     192.168.100.3    k3s-cp2   <none>           <none>
+calico-node-h5w8w                          1/1     Running   0          22m     192.168.100.2    k3s-cp1   <none>           <none>
+calico-node-prhc2                          1/1     Running   0          9m2s    192.168.100.11   k3s-wn2   <none>           <none>
+calico-node-r2p88                          1/1     Running   0          15m     192.168.100.4    k3s-cp3   <none>           <none>
+calico-node-smc6h                          1/1     Running   0          11m     192.168.100.10   k3s-wn1   <none>           <none>
+coredns-854c77959c-f67xh                   1/1     Running   0          22m     172.16.206.2     k3s-cp1   <none>           <none>
+local-path-provisioner-5ff76fc89d-spjvb    1/1     Running   0          22m     172.16.206.3     k3s-cp1   <none>           <none>
+metrics-server-86cbb8457f-97p5t            1/1     Running   0          22m     172.16.206.4     k3s-cp1   <none>           <none>
 ```
 
 Deployments in kube-system namespace:
