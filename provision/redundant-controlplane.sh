@@ -36,12 +36,7 @@ curl -sfL curl -sfL https://get.k3s.io \
           --node-ip "$ip_address" \
           --flannel-backend 'none' \
           --disable-network-policy \
-          --cluster-cidr '10.244.0.0/16' \
-          #--cluster-cidr '10.12.0.0/16' \
-          #--service-cidr '10.13.0.0/16' \
-          #--cluster-dns '10.13.0.10' \
-          --cluster-domain 'cluster.local' 
-          #--flannel-iface 'eth1'
+          --cluster-cidr '10.244.0.0/16'
 
 # see the systemd unit for k3s
 systemctl cat k3s

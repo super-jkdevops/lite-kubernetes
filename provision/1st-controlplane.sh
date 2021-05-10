@@ -34,18 +34,16 @@ curl -sfL curl -sfL https://get.k3s.io \
           --node-ip "$ip_address" \
           --flannel-backend 'none' \
           --disable-network-policy \
-          --cluster-cidr '10.244.0.0/16' \
-          #--cluster-cidr '10.12.0.0/16' \
-          #--service-cidr '10.13.0.0/16' \
-          #--cluster-dns '10.13.0.10' \
-          --cluster-domain 'cluster.local'
-          #--flannel-iface 'eth1'
+          --cluster-cidr '10.244.0.0/16' 
 
 # see the systemd unit for k3s
 systemctl cat k3s
 
 # see status k3s service
 systemctl status k3s
+
+# Deploy networkin within cluster
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 # wait for this node to be Ready.
 $SHELL -c 'node_name=$(hostname); echo "waiting for node $node_name to be ready..."; while [ -z "$(kubectl get nodes $node_name | grep -E "$node_name\s+Ready\s+")" ]; do sleep 3; done; echo "node ready!"'
@@ -61,9 +59,6 @@ kubectl cluster-info
 
 # list nodes.
 kubectl get nodes -o wide
-
-# Deploy networkin within cluster
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 # show versions.
 kubectl version
